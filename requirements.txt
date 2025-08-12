@@ -1,0 +1,14 @@
+autogen-agentchat==0.7.1
+autogen-ext[ollama]==0.7.1
+numpy==2.3.2
+
+# Scientific computing and analysis
+scipy>=1.10.0
+pandas>=2.0.0
+networkx>=3.1
+
+# Visualization libraries
+plotly>=5.17.0
+
+# Interactive web applications
+streamlit>=1.28.0

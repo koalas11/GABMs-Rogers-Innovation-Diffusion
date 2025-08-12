@@ -1,0 +1,54 @@
+[global]
+
+# Set to false to disable running on save
+runOnSave = false
+
+# Set to false to disable the warning when there is
+# a naming collision between files in the working directory
+# and files in the Streamlit distribution
+showWarningOnDirectExecution = false
+
+[server]
+
+# Port where the server will listen for HTTP requests
+port = 8501
+
+# The address where the server will listen for client and browser connections
+address = "localhost"
+
+# Enables support for CORS
+enableCORS = false
+
+# Enables support for websocket compression
+enableWebsocketCompression = false
+
+[browser]
+
+# Internet address where users should point their browsers in order to
+# connect to the app
+serverAddress = "localhost"
+
+# Whether to send usage statistics to Streamlit
+gatherUsageStats = false
+
+[theme]
+
+# Primary accent color for interactive elements
+primaryColor = "#FF6B6B"
+
+# Background color for the main content area
+backgroundColor = "#FFFFFF"
+
+# Background color used for the sidebar and most interactive widgets
+secondaryBackgroundColor = "#F0F2F6"
+
+# Color used for almost all text
+textColor = "#262730"
+
+# Font family for all text in the app, except code blocks
+font = "sans serif"
+
+[logger]
+
+# Level of logging: 'error', 'warning', 'info', or 'debug'
+level = "info"

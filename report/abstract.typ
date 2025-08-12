@@ -1,0 +1,7 @@
+This project investigates the simulation of innovation diffusion through Generative Agent-Based Modeling (GABM), based on Everett Rogers' Diffusion of Innovations theory, focusing on the decision stage and with some simplifications. By employing advanced AI agent frameworks, particularly AutoGen, the system enables agents to demonstrate human-like reasoning, adaptive decision-making and socially responsive behavior. The simulation models the spread of innovation across social networks, incorporating rich behavioral profiles to reflect individual and group dynamics.
+
+The report begins with an overview of AI agent frameworks and their capabilities, followed by an explanation of the GABM approach and its relevance to modeling complex social phenomena. Rogers' theoretical model is then examined, highlighting key adopter categories and the mechanisms of diffusion. Finally, the implementation of the simulation is presented, including system architecture, agent design and network configuration.
+
+It then concludes with a discussion of the results obtained and future development directions, focusing on the possibilities offered by the AutoGen framework to enhance agent autonomy, multi-agent collaboration and scalability in simulating increasingly complex innovation ecosystems.
+
+The repository containing the complete simulation results and additional materials can be found at [GitHub - AI-Agents-In-Depth](https://github.com/your-repo-link).
