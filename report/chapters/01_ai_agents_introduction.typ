@@ -1,12 +1,12 @@
 = Introduction to AI Agents
 
-Artificial Intelligence (AI) agents represent a significant advancement over traditional software agents, integrating machine learning, natural language processing and sophisticated decision-making capabilities. These enhancements enable AI agents to operate effectively in complex, uncertain environments with minimal human intervention.
+Artificial Intelligence (AI) agents are software systems that incorporate machine learning, natural language processing, and decision-making capabilities. These features allow AI agents to operate in complex and uncertain environments with reduced human intervention.
 
-Unlike conventional software agents that rely on predetermined scripts and decisions, AI agents utilize advanced techniques such as neural networks, reinforcement learning and large language models. These technologies enable them to exhibit intelligent behavior that can learn, adapt and evolve over time. As a result, AI agents are transforming a wide range of domains, including robotics, autonomous systems, natural language processing, game development, financial trading, healthcare diagnostics and complex multi-agent ecosystems.
+While AI agents offer new possibilities for automation and problem-solving, their effectiveness depends on careful design, appropriate training and clear understanding of their limitations. They are tools that can support or enhance human work, but they require oversight and thoughtful integration into existing processes.
 
 == AI Agents as Practical Task Automation Tools
 
-Over the course of the years, AI agents have evolved from experimental research prototypes into powerful, fully autonomous systems capable of scoping, planning and executing complex projects using a wide array of integrated tools, with minimal human oversight. These agents represent a leap beyond traditional automation, functioning as intelligent collaborators that can reason, adapt and act independently.
+Over the course of the years, AI agents have evolved from experimental research prototypes into powerful, highly capable systems capable of scoping, planning and executing complex projects using a wide array of integrated tools, with minimal human oversight. These agents represent a significant advancement beyond traditional automation, functioning as intelligent collaborators that can reason, adapt and act independently.
 
 === Contemporary AI Agent Applications for Task Automation
 
@@ -18,7 +18,7 @@ Over the course of the years, AI agents have evolved from experimental research 
 
 ==== Development and Technical Tasks
 - *Code Generation*: GitHub Copilot has revolutionized code generation by providing context-aware suggestions and completing code snippets based on natural language prompts @peng2023impactaideveloperproductivity
-- *Software Development*: Devin AI, as an example, has emerged as a powerful AI pair programmer, assisting developers in writing code more efficiently.
+- *Software Development*: Devin AI, as an example, has emerged as a powerful AI pair programmer, assisting developers in writing code more efficiently
 - *Documentation Generation*: Automated technical writing and maintenance
 - *Testing and Debugging*: Automated unit testing and code analysis
 
@@ -28,30 +28,14 @@ Over the course of the years, AI agents have evolved from experimental research 
 - *Research and Information Gathering*: Web scraping and data synthesis
 - *Content Creation*: Multi-modal content generation for various purposes
 
-=== Task Automation Capabilities
-
-Modern AI agents demonstrate the ability to set goals, strategize and adapt with human-like ingenuity, enabling sophisticated task automation that includes:
-
-==== Autonomous Goal Decomposition
-- *Task Breakdown*: Automatically dividing complex objectives into executable subtasks
-- *Dependency Management*: Understanding and managing task relationships and sequences
-- *Resource Allocation*: Optimizing computational and temporal resources
-- *Progress Monitoring*: Real-time tracking and adjustment of execution strategies
-
-==== Adaptive Execution Strategies
-- *Error Recovery*: Automatic detection and correction of execution failures
-- *Context Switching*: Seamless transition between different task domains
-- *Learning from Failures*: Continuous improvement based on execution outcomes
-- *Dynamic Replanning*: Real-time strategy adjustment based on changing conditions
-
 === Limitations and Challenges
 
 Despite their impressive capabilities, AI agents are not magic wands. Their effectiveness depends heavily on several key factors:
 
-- *Quality of Implementation*: Poorly designed or inadequately trained agents can produce inaccurate, inefficient or even harmful outcomes.
-- *Clarity of Objectives*: AI agents perform best when given well-defined goals and structured contexts. Ambiguity or vague instructions can hinder performance.
-- *Integration with Tools and Environments*: An agent's ability to operate depends on access to compatible tools, APIs, databases and infrastructure.
-- *Human Oversight and Control*: Even the most advanced systems benefit from human supervision, especially in critical domains like healthcare, finance or security.
+- *Quality of Implementation*: Poorly designed or inadequately trained agents can produce inaccurate, inefficient or even harmful outcomes
+- *Clarity of Objectives*: AI agents perform best when given well-defined goals and structured contexts. Ambiguity or vague instructions can hinder performance
+- *Integration with Tools and Environments*: An agent's ability to operate depends on access to compatible tools, APIs, databases and infrastructure
+- *Human Oversight and Control*: Even the most advanced systems benefit from human supervision, especially in critical domains like healthcare, finance or security
 
 AI agents mark a transformative shift in how automation and human-machine collaboration are approached. However, their impact is shaped by how they are designed, deployed and integrated into workflows. They are powerful tools, but not infallible and like any technology, they require expertise, vision and responsibility to unlock their full potential.
 
@@ -93,7 +77,7 @@ AutoGen provides a rich ecosystem of agent types tailored for multi-agent system
 
 ==== Assistant Agent
 
-This Agent is designed for task completion and problem-solving. It is typically powered by a large language model and excels in generating technical solutions, writing code and providing expert-level knowledge across various domains. This agent type is ideal for collaborative problem-solving, as it can interact with other agents to tackle complex challenges. It can also refine responses within a conversation via feedback. @autogen_agents
+This Agent is designed for task completion and problem-solving. It is typically powered by a large language model and excels in generating technical solutions, writing code and providing expert-level knowledge across various domains. This agent type is ideal for collaborative problem-solving, as it can interact with other agents to tackle complex challenges. It can also refine responses within a conversation via feedback @autogen_agents.
 
 This type of Agent will be used for the current project due to its ability to define a system prompt, manage conversation flow and avoid the complexity associated with other agent types.
 

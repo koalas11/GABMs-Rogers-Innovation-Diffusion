@@ -66,7 +66,9 @@ The individual becomes aware of the innovation and gains understanding of its fu
 The individual forms a favorable or unfavorable attitude toward the innovation. This stage is more affectively oriented, with individuals actively seeking information about the innovation and mentally applying it to their present and anticipated future situations. The five perceived attributes of innovations are particularly important during this stage.
 
 ==== Decision Stage
-The individual engages in activities that lead to adoption or rejection of the innovation. This stage represents the choice between adoption and rejection, though the decision may be revisited if additional information becomes available. The decision may be influenced by trial experiences if the innovation allows for limited testing.
+The individual engages in activities that lead to adoption or rejection of the innovation. This stage represents the choice between adoption and rejection.
+
+An important aspect of this stage is that the decision to adopt or reject is not final, individuals may reverse their decisions based on new information or experiences. Additionally, the decision-making process can be influenced by social pressures, personal values and perceived risks associated with the innovation.
 
 ==== Implementation Stage
 The individual puts the innovation to use. This stage involves the actual utilization of the innovation and may require acquiring new skills or modifying existing practices. Implementation may lead to reinvention as users adapt the innovation to their specific circumstances.
@@ -140,16 +142,16 @@ Laggards represent the final group to adopt innovations, often doing so only whe
 
 == Rogers's Curve <rogers_s_curve>
 
-The diffusion of innovations typically follows an S-shaped curve, illustrating the cumulative adoption over time. While this curve could be used as a validation mechanism, this project focuses on the individual decision-making process rather than the overall diffusion pattern, meaning it's expected to obtain completely different results.
+The diffusion of innovations typically follows an S-shaped curve, illustrating the cumulative adoption over time. While this curve could be used as a validation mechanism, this project focuses on the individual decision-making process rather than the overall diffusion pattern, meaning it's a possibility to obtain completely different results.
 
 #figure(
     caption: [Rogers' S-Curve of Adoption @rogers2003diffusion.],
-    image("../images/Diffusion_of_ideas.svg")
+    image("../images/Diffusion_of_ideas.svg", height: 50%)
 )
 
 The S-curve reflects the cumulative adoption over time, starting slowly, accelerating through the early and late majority, then slowing as saturation approaches.
 
-While the bell curve illustrates the distribution of adopters across different categories, it is essential to recognize that individual decision-making processes may not align neatly with these categories. 
+On the other hand, while the bell curve represents the expected timing at which each adopter category typically adopts an innovation, it is important to recognize that individual decision-making processes are far more nuanced and rarely align perfectly with these predefined groups.
 
 == Social Pressure and Network Influence in Innovation Diffusion
 
@@ -173,12 +175,12 @@ Network influence operates through threshold mechanisms where individuals adopt 
 - *Relationship strength*: Strong ties have greater influence on threshold achievement than weak ties
 - *Network density*: Dense networks can create rapid threshold cascades once critical mass is achieved
 
-=== Network Topology and Diffusion Patterns
+=== Network Topology and Diffusion Patterns <diffusion_research>
 
 The structure of social networks fundamentally shapes how innovations spread through populations. Agent-based simulation research have revealed how different network topologies create distinct diffusion dynamics @agents2024generativeagentbasedmodeling.
 
 ==== Small-World Networks
-Networks characterized by high local clustering and short path lengths between distant nodes @Watts1998 exhibit unique diffusion properties:
+Networks characterized by high local clustering and short path lengths between distant nodes @Watts1998, exhibit unique diffusion properties:
 - *Rapid global reach*: Short path lengths enable innovations to reach distant network regions quickly
 - *Local reinforcement*: High clustering provides multiple reinforcing adoption signals within neighborhoods
 - *Bridge importance*: Key bridging nodes can dramatically accelerate or impede diffusion
@@ -199,7 +201,7 @@ Different network structures create varying diffusion patterns:
 
 === Agent-Based Modeling Insights
 
-Recent agent-based modeling research has provided new insights into the complex interactions between social pressure, network structure and innovation characteristics in diffusion processes @agents2024generativeagentbasedmodeling, while this project will focus on the role of generative agents in simulating these dynamics, it's important to consider how previous findings can inform the approach and explore future developments.
+Recent agent-based modeling research has provided new insights into the complex interactions between social pressure, network structure and innovation characteristics in diffusion processes @agents2024generativeagentbasedmodeling, while this project will focus on the role of generative agents in simulating these dynamics, it's important to consider how previous findings can inform the approach.
 
 ==== Heterogeneous Agent Behaviors
 Agent-based models reveal how individual heterogeneity interacts with network effects:
@@ -215,7 +217,7 @@ Social networks are not static during diffusion processes but evolve in response
 - *Network fragmentation*: Strong preferences may lead to network splitting between adopters and non-adopters
 - *Influence network changes*: The influence structure may shift as early adopters gain or lose credibility
 
-== The Importance of Modeling the Decision Phase
+== The Importance of Modeling the Decision Phase <importance_decision_phase>
 
 While previous sections detailed the stages and social dynamics of innovation adoption, the decision phase itself warrants special attention due to its complexity and decisive impact on diffusion outcomes. Contemporary research, and Rogers himself, shows that decision-making is rarely linear or purely rational; instead, it involves recursive evaluation, multi-criteria analysis, bounded rationality and emotional influences, all shaped by network position and timing @rogers2003diffusion.
 
@@ -225,6 +227,10 @@ Moreover, the decision phase is typically the aspect most frequently modeled in 
 
 === Project Path
 
-Building on Rogers' theory, this project aims to simulates the decision-making process surrounding innovation adoption using generative AI agents (GABM). In this approach, each agent independently evaluates whether to adopt an innovation, based on its assigned adopter category, the perceived attributes of the innovation, the social network and social pressure influences. Agents do not communicate or influence each other during the decision phase; instead, their choices are shaped solely by their internal reasoning, category profile and the contextual information provided.
+Building on Rogers' theory, this project aims to simulate the decision-making process surrounding innovation adoption using generative AI agents. In this approach, each agent independently evaluates whether to adopt an innovation, based on its assigned adopter category using a profile, the perceived attributes of the innovation, the social network and social pressure influences. Agents do not communicate or influence each other during the decision phase; instead, their choices are shaped solely by their internal reasoning and the information available to them.
 
 The simulation incorporates key elements such as innovation characteristics, time dynamics and social system factors, but deliberately isolates the individual decision process to better analyze how different adopter profiles respond to the same innovation context. By leveraging large language models to represent heterogeneous decision-makers, the project explores how intrinsic factors drive adoption patterns in the early stages of diffusion, with a focus on how the social network and social pressure influences impact individual decision-making.
+
+While it's true that an agent-based approach without LLMs could be used instead, it would likely rely on simpler heuristics and rules, which are hard to define and may not capture the full complexity of human reasoning.
+
+In contrast, the GABM approach enables a more nuanced representation of decision-making by leveraging the capabilities of large language models. This allows for the incorporation of diverse reasoning patterns, consideration of multiple factors and a better reflection of the complexity and variability found in real-world adoption scenarios.

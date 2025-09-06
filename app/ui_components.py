@@ -137,9 +137,9 @@ def create_sidebar_controls():
                     try:
                         config_name = st.session_state.simulation.config.name
                         if config_name:
-                            filename = f"simulation_results_{config_name}"
+                            filename = f"results_{config_name}"
                         else:
-                            filename = "simulation_results"
+                            filename = "results"
                         st.session_state.simulation.save_results(filename)
                         st.sidebar.success(f"✅ Simulation saved as: '{filename}'")
                     except Exception as e:

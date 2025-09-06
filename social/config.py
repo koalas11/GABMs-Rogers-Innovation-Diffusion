@@ -287,7 +287,7 @@ SIMULATION_CONFIGS = {
         network_seed=41,
         network_shuffle=True,
         speed_up=False,
-        enable_devils_advocate=True
+        enable_devils_advocate=False
     ),
 
     "decent_innovation_innovators_only": SimulationConfig(
@@ -311,7 +311,104 @@ SIMULATION_CONFIGS = {
         network_seed=41,
         network_shuffle=True,
         speed_up=False,
-        enable_devils_advocate=True
+        enable_devils_advocate=False
+    ),
+
+    "good_innovation_early_adopter_only": SimulationConfig(
+        name="good_innovation_early_adopter_only",
+        num_agents=20,
+        max_steps=1,
+        adopter_distribution={
+            "Innovator": 0.0,
+            "EarlyAdopter": 1.0,
+            "EarlyMajority": 0.0,
+            "LateMajority": 0.0,
+            "Laggard": 0.0
+        },
+        innovation_attributes={
+            "relative_advantage": 0.8,
+            "compatibility": 0.8,
+            "complexity": 0.4,
+            "trialability": 0.8,
+            "observability": 0.8
+        },
+        network_seed=41,
+        network_shuffle=True,
+        speed_up=False,
+        enable_devils_advocate=False
+    ),
+
+    "good_innovation_early_majority_only": SimulationConfig(
+        name="good_innovation_early_majority_only",
+        num_agents=20,
+        max_steps=1,
+        adopter_distribution={
+            "Innovator": 0.0,
+            "EarlyAdopter": 0.0,
+            "EarlyMajority": 1.0,
+            "LateMajority": 0.0,
+            "Laggard": 0.0
+        },
+        innovation_attributes={
+            "relative_advantage": 0.8,
+            "compatibility": 0.8,
+            "complexity": 0.4,
+            "trialability": 0.8,
+            "observability": 0.8
+        },
+        network_seed=41,
+        network_shuffle=True,
+        speed_up=False,
+        enable_devils_advocate=False
+    ),
+
+
+    "good_innovation_late_majority_only": SimulationConfig(
+        name="good_innovation_late_majority_only",
+        num_agents=20,
+        max_steps=1,
+        adopter_distribution={
+            "Innovator": 0.0,
+            "EarlyAdopter": 0.0,
+            "EarlyMajority": 0.0,
+            "LateMajority": 1.0,
+            "Laggard": 0.0
+        },
+        innovation_attributes={
+            "relative_advantage": 0.8,
+            "compatibility": 0.8,
+            "complexity": 0.4,
+            "trialability": 0.8,
+            "observability": 0.8
+        },
+        network_seed=41,
+        network_shuffle=True,
+        speed_up=False,
+        enable_devils_advocate=False
+    ),
+
+    "good_innovation_laggard_only": SimulationConfig(
+        name="good_innovation_laggard_only",
+        num_agents=20,
+        max_steps=1,
+        adopter_distribution={
+            "Innovator": 0.0,
+            "EarlyAdopter": 0.0,
+            "EarlyMajority": 0.0,
+            "LateMajority": 0.0,
+            "Laggard": 1.0
+        },
+        innovation_attributes={
+            "relative_advantage": 0.8,
+            "compatibility": 0.8,
+            "complexity": 0.4,
+            "trialability": 0.8,
+            "observability": 0.8
+        },
+        network_seed=41,
+        network_shuffle=True,
+        speed_up=False,
+        enable_devils_advocate=False
     ),
 
     "early_adopters_devils_prompt_on": SimulationConfig(

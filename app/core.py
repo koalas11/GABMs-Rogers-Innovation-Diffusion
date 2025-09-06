@@ -220,9 +220,9 @@ class StreamlitDiffusionApp:
             try:
                 config_name = st.session_state.simulation.config.name
                 if config_name:
-                    filename = f"simulation_results_{config_name}"
+                    filename = f"results_{config_name}"
                 else:
-                    filename = "simulation_results"
+                    filename = "results"
                 st.session_state.simulation.save_results(filename)
                 st.sidebar.success(f"✅ Simulation saved as: '{filename}'")
             except Exception as e:
@@ -520,10 +520,14 @@ class StreamlitDiffusionApp:
                     st.warning("No step data available for visualization")
             else:
                 st.error("❌ No agent state or adoption history data available for step-by-step visualization")
+            self.create_agents_analysis(results)
 
         with tab5:
             st.markdown("### 🧠 Agent Response Analysis")
-            
+
+            self.create_agents_analysis(results, "analysis")
+
+    def create_agents_analysis(self, results: Dict, key: str = "network"):
             # Get agent states and adoption history from results
             agent_states = results.get('agent_states', [])
             adoption_history = results.get('adoption_history', {})
@@ -560,7 +564,7 @@ class StreamlitDiffusionApp:
                                 max_value=max_step,
                                 value=max_step,
                                 help=f"View agent response at different simulation steps (1 to {max_step})",
-                                key="selected_step_agent_response"
+                                key="selected_step_" + key
                             )
 
                     with col2:
@@ -568,7 +572,7 @@ class StreamlitDiffusionApp:
                             "Select Agent",
                             options=[agent['agent_id'] for agent in agent_states],
                             help="View details for a specific agent",
-                            key="selected_agent_response"
+                            key="selected_agent_" + key
                         )
 
                 if selected_step > 0 and selected_agent:

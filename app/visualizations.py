@@ -22,7 +22,7 @@ def _create_empty_figure(message: str) -> go.Figure:
     fig.add_annotation(
         text=message,
         xref="paper", yref="paper",
-        x=0.5, y=0.5, showarrow=False,
+        x=0.5, y=0.1, showarrow=False,
         font=dict(size=16, color="gray")
     )
     return fig
@@ -114,14 +114,14 @@ def create_adoption_curve(results: Dict) -> go.Figure:
         row=2, col=2
     )
     
-    fig.update_xaxes(title_text="Simulation Step", row=1, col=1)
-    fig.update_xaxes(title_text="Simulation Step", row=1, col=2)
-    fig.update_xaxes(title_text="Simulation Step", row=2, col=1)
-    fig.update_xaxes(title_text="Simulation Step", row=2, col=2)
-    fig.update_yaxes(title_text="Cumulative Adoption Rate (%)", row=1, col=1)
-    fig.update_yaxes(title_text="Cumulative Adoptions", row=1, col=2)
-    fig.update_yaxes(title_text="Adoption Rate (%)", row=2, col=1)
-    fig.update_yaxes(title_text="Adoptions", row=2, col=2)
+    fig.update_xaxes(title_text="Simulation Step", row=1, col=1, dtick=1)
+    fig.update_xaxes(title_text="Simulation Step", row=1, col=2, dtick=1)
+    fig.update_xaxes(title_text="Simulation Step", row=2, col=1, dtick=1)
+    fig.update_xaxes(title_text="Simulation Step", row=2, col=2, dtick=1)
+    fig.update_yaxes(title_text="Cumulative Adoption Rate (%)", row=1, col=1, dtick=10)
+    fig.update_yaxes(title_text="Cumulative Adoptions", row=1, col=2, dtick=10)
+    fig.update_yaxes(title_text="Adoption Rate (%)", row=2, col=1, dtick=5)
+    fig.update_yaxes(title_text="Adoptions", row=2, col=2, dtick=5)
 
     fig.update_layout(height=800, showlegend=False,
                      title="Innovation Adoption Progress Over Steps")
@@ -160,7 +160,7 @@ def create_category_analysis(results: Dict) -> go.Figure:
     )
 
     colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7']
-    # Adoption rates bar chart (now correct)
+    # Adoption rates bar chart
     fig.add_trace(
         go.Bar(
             x=categories,
@@ -213,12 +213,14 @@ def create_category_adoption_rate_over_time(results: Dict) -> go.Figure:
     categories = [cat for cat in ADOPTER_CATEGORIES if category_total[cat] > 0]
 
     # Prepare: for each step, count cumulative adopted per category
-    steps = sorted(int(s) for s in adoption_history.keys())
+    steps = [0] + sorted(int(s) for s in adoption_history.keys())
     category_cumulative = {cat: [] for cat in categories}
 
     # For each step, get set of adopted agent_ids
-    adopted_per_step = []
+    adopted_per_step = [[]]
     for step in steps:
+        if step == 0:
+            continue  # Skip initial step, no adoption data
         agents_results = adoption_history[step]['agents_results']
         adopted_ids = {aid for aid, state in agents_results.items() if state.get('has_adopted', False)}
         adopted_per_step.append(adopted_ids)
@@ -253,8 +255,9 @@ def create_category_adoption_rate_over_time(results: Dict) -> go.Figure:
         xaxis_title="Simulation Step",
         yaxis_title="Cumulative Adoption Rate (%)",
         height=500,
-        yaxis=dict(range=[0, 100])
+        yaxis=dict(range=[0, 100], dtick=10)
     )
+    fig.update_xaxes(dtick=1)  # Set x-axis ticks to every step
     return fig
 
 def _update_graph_with_agent_attributes(graph: nx.Graph, step: int) -> None:

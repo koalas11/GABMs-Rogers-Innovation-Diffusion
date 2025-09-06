@@ -39,6 +39,37 @@
   }
 }
 
+/*
+#let MissingRef(body, small_text: 5pt) = {
+      let body = if body == [] {
+        [Missing Ref: XXX]
+      } else {
+        body
+      }
+      set text(fill: white, size: small_text, weight: "bold")
+      text()[~~]
+      box(
+        fill: rgb("#e046d3"),
+        outset: 4pt,
+        radius: 3pt,
+        stroke: luma(1),
+        [#body #place()[    
+          #set text(size: 0pt)    
+          #figure(kind: "MissingRef", supplement: "", caption: body, []),
+        ]])
+      text()[~~]
+}
+
+#show ref: it => {
+  if query(it.target).len() > 0 {
+    it
+  } else {
+    MissingRef[Ref Missing #str(it.target)]
+
+  }
+}
+*/
+
 #set cite(form: "prose")
 
 #set heading(numbering: none)
