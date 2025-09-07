@@ -18,9 +18,9 @@ Unlike traditional threshold-based models of innovation diffusion where decision
 The methodological approach directly implements Rogers' four key elements of diffusion: 
 
 - *Innovation characteristics* through structured attribute scoring using discrete 0-10 scales
-- *Communication channels* implemented through network-based information flow, where agents observe adoption status of their network connections rather than direct inter-agent communication
+- *Communication channels* simplified with agents observing adoption status of their network connections, rather than direct inter-agent communication
 - *Time dimension* through discrete simulation steps and temporal context provided in LLM prompts
-- *Social system effects* through agent behavioral profiles, network topology and global adoption information that all agents can observe
+- *Social system effects* through agent behavioral profiles, network topology and global adoption information
 
 This integration addresses Rogers' emphasis on the complexity of the decision phase, where individuals transition from attitude formation to behavioral commitment through recursive evaluation, multi-criteria analysis and bounded rationality considerations.
 
@@ -32,7 +32,7 @@ A key implementation requirement is proper information isolation: when construct
 
 A central component of the methodology is the implementation of LLM-powered decision-making that transforms abstract agent profiles into concrete adoption choices. Each agent is implemented as an `AssistantAgent` from the AutoGen Chat library, receiving constructed prompts combining their behavioral profile with current environmental information, enabling dynamic, context-sensitive responses aligned with Rogers' theory.
 
-To avoid context leakage and aims to ensure that agents make decisions based solely on the information available at each simulation step, each agent has their own model client, allowing for a single instance of the LLM to be used for all agents while maintaining isolation.
+To avoid context leakage and to ensure that agents make decisions based solely on the information available at each simulation step, each agent has their own model client, allowing for a single instance of the LLM to be used for all agents while maintaining isolation.
 
 == Agent-Based Decision-Making Architecture
 
@@ -40,7 +40,7 @@ To avoid context leakage and aims to ensure that agents make decisions based sol
 
 ==== Dual-Prompt Architecture
 
-A central point of the simulation is the use of carefully constructed prompts to guide agent decision-making via large language models. The prompt engineering process represents iterative development and testing to ensure theoretical alignment and behavioral consistency. 
+A central point of the simulation is the use of carefully constructed prompts to guide agent decision-making via large language models. The prompt engineering process represents iterative development and testing to ensure theoretical alignment and behavioral consistency, though avoiding biases remains challenging as LLMs are highly sensitive to even minor prompt variations, and unintended biases can emerge easily as demonstrated in some examples of @gabm_examples.
 
 The simulation employs a two-tier prompting strategy:
 
@@ -204,13 +204,13 @@ A fundamental aspect of the prompt design in this simulation is the deliberate a
 
 This design choice serves two main purposes: first, it prevents the language model from simply reproducing stereotypes associated with explicit labels ("innovator", "early adopter", etc.); second, it encourages the emergence of more natural and theory-consistent behaviors, allowing the differences in behavioral profiles to guide the decision process. 
 
-Additionally, the decision prompts are deliberately kept concise and focused, containing only essential contextual information. This design maximizes the available context window for the agent's behavioral profile and reasoning process, ensuring that the LLM can maintain full awareness of the agent's characteristics throughout the decision-making process without being constrained by excessive prompt length.
+Additionally, the decision prompts are deliberately kept concise and focused, containing only essential contextual information. This design maximizes the available context window for the agent's behavioral profile and reasoning process, ensuring that the LLM can maintain full awareness of the agent's characteristics throughout the decision-making process without being constrained by excessive prompt length. This concise approach also allows the LLM to maintain previous decision reasoning in the conversation context, enabling agents to reference and build upon their past decisions as they reconsider adoption across multiple simulation steps, creating more realistic decisions similar to human reasoning.
 
-As a result, agent responses seem to reflect a variety of reasoning patterns and sensitivities, without being constrained by rigid instructions or biases induced by explicit labels.
+As a result, agent responses seem to reflect a variety of reasoning patterns and sensitivities, without being constrained by rigid instructions or biases.
 
 == NetworkX - Network Implementation
 
-The simulation employs the NetworkX library to generate realistic social network structures using the Watts-Strogatz model for small-world networks @NetworkX. The small-world network parameters include the number of nodes, the number of nearest neighbors each node connects to (typically 4-6) and the rewiring probability (typically 0.1-0.3) that controls the balance between local clustering and long-range connections.
+The simulation employs the NetworkX library to generate realistic social network structures, that the project uses for creating agents connections with each other, using the Watts-Strogatz model for small-world networks @NetworkX. The small-world network parameters include the number of nodes, the number of nearest neighbors each node connects to (typically 4-6) and the rewiring probability (typically 0.1-0.3) that controls the balance between local clustering and long-range connections.
 
 The simulation environment also supports scale-free networks (using the Barabási-Albert model) and random networks (using the Erdős-Rényi model) for comparative analysis, as detailed in previous chapters. The implementation includes:
 
@@ -264,7 +264,7 @@ While it was possible to instead return a default response after a failure, I de
 
 === Prompt Engineering Challenges
 
-Another significant challenge was the risk of prompt-induced biases. Since LLMs are sensitive to subtle wording and context, even minor changes in prompt phrasing could lead to systematic shifts in agent behavior, undermining the theoretical validity of the simulation as shown in some examples of @gabm_examples. To address this, I iteratively refined the prompt engineering process, focusing on neutral, quantitative language and avoiding leading or suggestive statements. 
+Another significant challenge was the risk of prompt-induced biases. Since LLMs are sensitive to subtle wording and context, even minor changes in prompt phrasing could lead to systematic shifts in agent behavior, undermining the theoretical validity of the simulation as shown in some examples of @gabm_examples. To address this, I iteratively refined the prompts, focusing on neutral, quantitative language and avoiding leading or suggestive statements. 
 
 Behavioral profiles were carefully rewritten to reflect Rogers' categories without explicitly labeling them, reducing the risk of agents simply mimicking category stereotypes. Furthermore, I tested multiple prompt variants and analyzed agent outputs to identify and minimize any persistent biases, ensuring that decision-making patterns emerged organically from the agents' profiles and environmental context rather than from prompt artifacts.
 

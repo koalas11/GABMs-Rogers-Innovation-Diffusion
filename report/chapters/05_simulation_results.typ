@@ -1,11 +1,3 @@
-#show ref: it => {
-  if it.element == none {
-    text(fill: red)[(?)]
-  } else {
-    it
-  }
-}
-
 = Simulation Results and Analysis
 
 This chapter presents comprehensive results from simulations conducted using the proposed Generative Agent-Based Model (GABM) methodology. The analysis focuses on key decision-making dynamics, behavioral patterns across agent categories and the interplay between innovation attributes and network effects in driving adoption diffusion.
@@ -666,6 +658,8 @@ The balanced innovation simulation revealed fundamentally different dynamics:
 *Observation:* In Step 1, only Innovators adopted; in Step 2, there were no adoptions; and in Step 3, only a few Early Adopters decided to adopt.
 
 *Analysis:* This temporal pattern highlights the non-linear effects of network influence. After an initial period of inertia, the accumulation of previous adoption decisions can suddenly trigger uptake among previously hesitant categories. Such delayed responses underscore how network structure and local thresholds can create tipping points, leading to abrupt shifts in adoption dynamics.
+
+Of course due to the nature of LLM this is not always the case and it might be just a coincidence, but it is an interesting observation nonetheless.
 
 *Observation 2: Laggard Social Pressure*
 
