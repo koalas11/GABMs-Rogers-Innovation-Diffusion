@@ -220,6 +220,43 @@ The simulation environment also supports scale-free networks (using the Barabás
 
 *Reproducible Generation*: Configurable random seeds enable identical network structures and agent shuffling across multiple simulation runs, facilitating controlled experimentation and result validation.
 
+== Model Summary
+
+The simulation implements a generative agent-based model of innovation diffusion that combines Rogers' theory with LLM-powered decision-making within configurable network topologies. The core model consists of:
+
+=== Agent Architecture
+- *Population*: Network of agents representing Rogers' five adopter categories
+- *Decision-Making*: LLM-powered agents using behavioral profiles and contextual prompts rather than simple threshold comparisons
+- *State Transitions*: Irreversible adoption decisions with agents becoming inactive post-adoption
+
+=== Environmental Context
+- *Network Structure*: Static small-world topology (Watts-Strogatz model) with configurable parameters, supporting alternative topologies (scale-free, random)
+- *Information Flow*: Agents observe direct neighbor adoption status and global adoption rates, without direct inter-agent communication
+- *Temporal Dynamics*: By utilizing the model's context window, agents retain memory of previous decisions and reasoning across multiple steps
+
+=== Agent Perceptions
+At each simulation step, non-adopter agents perceive:
+- Proportion of direct network neighbors who have adopted
+- Overall population adoption rate
+- Innovation attributes (relative advantage, compatibility, complexity, trialability, observability) on 0-10 scales
+
+=== Available Actions
+Each agent can:
+- *Adopt* the innovation, becoming inactive in future steps
+- *Not Adopt* and reconsider in subsequent steps
+
+=== Decision Process
+Adoption choices emerge from:
+- LLM-generated reasoning based on agent's behavioral profile
+- Integration of network and global adoption information
+- Innovation attribute evaluation through category-specific lens
+- Stochastic variation inherent in LLM responses
+
+=== Simulation Termination
+The simulation ends when:
+- All agents have adopted the innovation
+- No new adoptions occur for a predefined number of consecutive steps
+
 == Implementation Challenges and Solutions
 
 Several critical challenges emerged throughout the development process that required solutions to ensure simulation reliability and theoretical validity.
@@ -355,7 +392,7 @@ The validation approach leverages the reasoning data captured in agent responses
 - Identify and analyze contradictions between reasoning content and final choices
 - Ensure consistency between confidence levels and decision rationale
 
-=== Methodological Limitations
+== Methodological Limitations
 
 While the GABM approach provides a powerful framework for simulating innovation adoption, several limitations must be acknowledged:
 

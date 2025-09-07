@@ -562,6 +562,8 @@ The successful innovation simulation demonstrates several key patterns:
 
 - *Network Structure Impact:* The small-world topology facilitated rapid diffusion through both local clustering (enabling rapid local spread) and long-range connections (allowing adoption to "jump" across network regions). Bridge agents connecting different clusters showed disproportionate influence on overall adoption patterns.
 
+#pagebreak()
+
 ==== Specific Behavioral Observations
 
 *Observation 1: Early Majority Premature Adoption*
@@ -595,6 +597,8 @@ The successful innovation simulation demonstrates several key patterns:
 - *Confidence Level:* 7
 
 *Analysis:* This response demonstrates appropriate Late Majority behavior, balancing innovation attributes with social proof from network connections and global adoption rates.
+
+#pagebreak()
 
 *Observation 3: Laggard Network Pressure Response*
 
@@ -661,6 +665,8 @@ The balanced innovation simulation revealed fundamentally different dynamics:
 
 Of course due to the nature of LLM this is not always the case and it might be just a coincidence, but it is an interesting observation nonetheless.
 
+#pagebreak()
+
 *Observation 2: Laggard Social Pressure*
 
 #figure(
@@ -676,6 +682,8 @@ Of course due to the nature of LLM this is not always the case and it might be j
 - *Confidence Level:* 9
 
 *Analysis:* This demonstrates how network connections become primary drivers for neutral innovations, with social influence overcoming individual skepticism.
+
+#pagebreak()
 
 *Observation 3: Persistent Resistance*
 

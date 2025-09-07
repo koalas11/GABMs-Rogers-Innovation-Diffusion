@@ -154,7 +154,7 @@ A potential way to address this issue is to utilize another LLM to validate the 
 
 == Conclusions
 
-This report has explored the integration of generative agent-based modeling (GABM) with innovation diffusion theory, demonstrating both the potential and limitations of LLM-driven agents for simulating complex social processes. By leveraging prompting strategies and the autogen framework, the project established that GABMs can provide access to agent reasoning processes and capture nuanced decision-making dynamics that traditional ABMs cannot replicate.
+This report has explored the integration of generative agent-based modeling (GABM) with innovation diffusion theory, demonstrating both the potential and limitations of LLM-driven agents for simulating complex social processes. By leveraging prompting strategies and the autogen framework, the project established that GABMs can provide access to agent reasoning processes and capture nuanced decision-making dynamics that traditional ABMs may not be able to replicate.
 
 However, the research also revealed significant challenges that must be addressed. The hallucination problem, where agents make decisions based on incorrect information or provide reasoning inconsistent with their choices, represents a fundamental limitation requiring systematic investigation. Additionally, computational constraints and validation difficulties pose practical barriers to this approach.
 
